@@ -1,0 +1,21 @@
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 78%;
+    overflow-x: auto;
+    height: 150px;
+}
+
+th, td {
+    padding: 10px 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+#table-head{
+    height: 30px;
+    background-color: rgb(238, 112, 133);
+    color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}

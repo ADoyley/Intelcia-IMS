@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelcia Jamaica Inventory Management System</title>
+    <!-- Include your CSS stylesheets and JavaScript files here -->
+    <link rel="stylesheet" href="style-IMS.css">
+    <!--For FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style-table.css">
+    <link rel="stylesheet" href="style-add.css">
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Your header content goes here -->
+        <div id="logo-box">
+            <img class="logo" src="https://cdn.contactcenterworld.com/images/company/intelcia-1200px-logo.png" alt="Intelcia Logo">
+        </div>
+        
+        <!--<h1>Inventory Management System</h1> -->
+
+        <!--The input has to be before the hidden item-->
+        <input type="checkbox" id="hide-toggle" name="hide-it"/>
+        <nav>
+            <ul class="full-nav">
+                <li><a href="Index.html"><span id="full-word">Home</span></a></li>
+                <li><a href="#"><span id="full-word">Reports</span></a></li>
+                <li><a href="#"><span id="full-word">Settings</span></a></li>
+            </ul>
+        </nav>
+        <label for="hide-toggle" id="mini-nav">
+            <i class="fa-solid fa-bars" ></i>
+        </label>
+    </header>
+    <main>
+        
+        <form id="inventoryForm" class="container">
+            <h1>Add an Item</h1>
+            <section class="form-group">
+                <label for="itemType">Item Type:</label>
+                <select id="itemType" name="itemType" required>
+                    <option value="">Select Item Type</option>
+                    <option value="cpu">CPU</option>
+                    <option value="keyboard">Keyboard</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="monitor">Monitor</option>
+                    <option value="headset">Headset</option>
+                </select><br><br>
+            </section>
+            
+
+            <section class="form-group">
+                <label for="brand" id="title-brand">Brand:</label>
+                <input type="text" id="brand" name="brand" required><br><br>
+            </section>
+            
+            <section class="form-group">
+                <label for="model" id="title-model">Model Number:</label>
+                <input type="text" id="model" name="model" required><br><br>
+            </section>
+            
+            <section class="form-group">
+                <label for="serial" id="title-serial">Serial Number:</label>
+                <input type="text" id="serial" name="serial" required><br><br>
+            </section>
+            
+            <section class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="">Select Location</option>
+                    <option value="Zone 1">Zone 1</option>
+                    <option value="Zone 2">Zone 2</option>
+                    <option value="Zone 3">Zone 3</option>
+                    <option value="Zone 4">Zone 4</option>
+                    <option value="Zone 5">Zone 5</option>
+                    <option value="Zone 6">Zone 6</option>
+                </select><br><br>
+            </section>
+
+            <input type="submit" value="Submit" id="submit">
+         </form>
+    </main>
+    <footer>
+        <!-- Your footer content goes here -->
+        <p>&copy; Intelcia Jamaica, 2023 Inventory Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

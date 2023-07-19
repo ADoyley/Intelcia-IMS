@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelcia Jamaica Inventory Management System</title>
+    <!-- Include your CSS stylesheets and JavaScript files here -->
+    <link rel="stylesheet" href="style-IMS.css">
+    <!--For FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style-table.css">
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="table.js"></script>    
+</head>
+<body>
+    <header>
+        <!-- Your header content goes here -->
+        <div id="logo-box">
+            <img class="logo" src="https://cdn.contactcenterworld.com/images/company/intelcia-1200px-logo.png" alt="Intelcia Logo">
+        </div>
+        
+        <!--<h1>Inventory Management System</h1> -->
+
+        <!--The input has to be before the hidden item-->
+        <input type="checkbox" id="hide-toggle" name="hide-it"/>
+        <nav>
+            <ul class="full-nav">
+                <li><a href="Index.html"><span id="full-word">Home</span></a></li>
+                <li><a href="#"><span id="full-word">Reports</span></a></li>
+                <li><a href="#"><span id="full-word">Settings</span></a></li>
+            </ul>
+        </nav>
+        <label for="hide-toggle" id="mini-nav">
+            <i class="fa-solid fa-bars" ></i>
+        </label>
+    </header>
+    <main>
+        <div class="search-filter">
+            <input type="text" id="search-bar" placeholder="Search items...">
+            <button id="filter-button">Filter</button>
+        </div>
+        <section class="box-1">
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th id="table-head">Item Type</th>
+                        <th id="table-head">Brand</th>
+                        <th id="table-head">Model</th>
+                        <th id="table-head">Serial Number</th>
+                        <th id="table-head">Location</th>
+                    </tr>
+                </thead>
+                <tbody id="inventory-table tbody">
+                    <!-- Table body rows will be dynamically generated -->
+                </tbody>
+            </table>
+        </section>
+        
+        <button id="add-item-button" onclick="window.location.href='Add Items - IMS.html';">Add New Item</button>
+    </main>
+    <footer>
+        <!-- Your footer content goes here -->
+        <p>&copy; Intelcia Jamaica, 2023 Inventory Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
