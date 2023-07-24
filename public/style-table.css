@@ -3,6 +3,7 @@ table{
     border-collapse: collapse;
     width: 78%;
     overflow-x: auto;
+    overflow-y: auto;
     height: 150px;
 }
 

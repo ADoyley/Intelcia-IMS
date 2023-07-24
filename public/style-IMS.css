@@ -4,6 +4,7 @@ body{
     background-color: whitesmoke;
     margin: 0;
     font-family: 'Roboto', 'sans-serif';
+    font-size: 16px;
 }
 
 header{
@@ -110,11 +111,12 @@ li a:hover {
 }
 
 #add-item-button{
-    font-size: 18px;
-    padding: 18px 20px;
-    border-radius: 100px;
-    background-color: whitesmoke;
-    border: 4px solid rgb(238, 112, 133);
+    font-size: 16px;
+    padding: 15px 15px;
+    border-radius: 35px;
+    color: white;
+    background-color: rgb(238, 112, 133);
+    border: 1px solid rgb(245, 209, 215);
     transition: 0.4s ease-in-out;
     position: fixed;
     top: 75%;
@@ -122,20 +124,29 @@ li a:hover {
 }
 
 #add-item-button:hover{
+    background-color: whitesmoke;
+    border: 1px solid rgb(238, 112, 133);
+    color: black;
+    padding: 15px 15px;
+    box-shadow: 0 0px 5px black;
+}
+
+#add-item-button:active{
+    box-shadow: 0 0px 3px black;
+    padding: 13px 13px;
+    color: white;
     background-color: rgb(238, 112, 133);
-    border: 4px solid black;
-    color: whitesmoke;
-    font-weight: bold;
-    padding: 18px 17px;
+    border: 1px solid rgb(245, 209, 215);
 }
 
 /*Mobile*/
 @media screen and (max-width : 480px){
     body{
-        overflow-x: hidden;
         overflow: hidden; /* Hide scrollbars */
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
+        font-size: 16px;
+        
     }
 
     body::-webkit-scrollbar {
@@ -148,8 +159,14 @@ li a:hover {
         height: 10vh;
     }
 
+    main{
+        margin-top: 25%;
+        margin-right: 16px;
+        
+    }
+
     .logo{
-        width: 60%;
+        width: 70%;
     }
 
     ul {
@@ -159,6 +176,7 @@ li a:hover {
 
     .full-nav{
         position: absolute;
+        z-index: 20;
         height: 31.5vh;
         top: 7vh;
         background-color: rgb(0, 0, 0);
@@ -182,6 +200,7 @@ li a:hover {
 
     #mini-nav{
         display: block;
+        z-index: 10;
     }
 
     #hide-toggle:checked ~ * .full-nav {
@@ -189,22 +208,54 @@ li a:hover {
     }
 
     .box-1{
+        overflow-x:auto;
         justify-content: space-around;
         align-items: center;
         margin-left: 5%;
-        overflow-x:auto;
         height: 50vh;
     }
 
     #add-item-button{
+        top: 77.5%;
         left: 60%;
-        padding: 16px 14px;
+        padding: 15px 15px;
     }
 
     #add-item-button:hover{
         font-weight: normal;
-        padding: 16px 14px;
+        padding: 15px 15px;
     }
+
+    #search-bar{
+        width: 75%;
+        height: 48px;
+        border-radius: 5px;
+    }
+
+    #search-bar:focus{
+        outline: 3px dashed black;
+    }
+
+    #filter-button{
+        padding: 17px 10px;
+        background-color: blue;
+        color: white;
+        border: 2px solid blue;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+    
+    #filter-button:hover {
+        background-color: white;
+        color: blue;
+    }
+
+    .search-filter{
+        margin-left: 16px;
+        margin-bottom: 20px;
+    }
+
 }
 
 /*Tablet*/
@@ -225,6 +276,8 @@ li a:hover {
         top: 0;
         height: 10vh;
     }
+    
+    
 
     ul {
         margin: 0;
@@ -320,3 +373,4 @@ li a:hover {
         color: black;
     }
 }
+
