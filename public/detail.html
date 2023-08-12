@@ -9,9 +9,12 @@
     <!--For FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style-table.css">
+    <link rel="stylesheet" href="detail style.css">
     <!--Jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="table.js"></script>    
+    <script src="detail.js"></script>
+    
+
 </head>
 <body>
     <header>
@@ -40,27 +43,39 @@
             <input type="text" id="search-bar" placeholder="Search items...">
             <i class="fas fa-filter" id="filter-button"></i>
         </div>
-        <section class="box-1">
-            <table id="inventory-table">
-                <thead>
-                    <tr>
-                        <th id="table-head">Item Type</th>
-                        <th id="table-head">Brand</th>
-                        <th id="table-head">Model</th>
-                        <th id="table-head">Serial Number</th>
-                        <th id="table-head">Location</th>
-                    </tr>
-                </thead>
-                <tbody id="inventory-table tbody">
-                    <!-- Table body rows will be dynamically generated -->
-                </tbody>
-            </table>
+        <section class="grid-container">
+            <article class="photo-card">
+                <img src="" alt="Item Pic" class="item-pic">
+            </article>
+            <article class="detail-card">
+                <h2 class="item-type"></h2>
+                <p class="brand-model"></p>
+                <br><br>
+                <span class="status"></span>
+                <h4 class="serial-number">Serial Number: </h5>
+                <p class="location"> Location </p>
+            </article>
+            <article class="options">
+                <ul>
+                    <li id="opt-icon"><a href="Update Items.html"><i class="fas fa-wrench"></i> &emsp; Update this Item</a></li>
+                    <li id="opt-icon"><a href="Add Items - IMS.html"><i class="fas fa-plus"></i> &emsp; Add a new item</a></li>
+                    <li class="delete-button" id="opt-icon"><a><i class="fas fa-trash"></i> &emsp; Remove this item</a></li> 
+                </ul>
+            </article>
         </section>
-        
-        <span id="wrapper"></span>
-        <i class="fas fa-plus" id="add-item-button" onclick="window.location.href='Add Items - IMS.html';">
-            <span class="tooltiptext">Add an item</span>
-        </i>
+        <!-- The dialog element -->
+        <!--This is to confirm the deletion-->
+        <dialog id="confirmationDialog">
+            <h2>Confirmation</h2>
+            <p>Are you sure you want to proceed?</p>
+            <div class="confirmation-dialog-buttons">
+                <button id="confirmBtn">Confirm</button>
+                <button id="cancelBtn">Cancel</button>
+            </div>
+        </dialog>
+        <div class="success-message" >
+            Item deleted successfully!
+        </div>
     </main>
     <footer>
         <!-- Your footer content goes here -->

@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: whitesmoke;
     margin: 0;
     font-family: 'Roboto', 'sans-serif';
+    font-size: 16px;
 }
 
 header{
@@ -22,17 +27,28 @@ header{
 }
 
 main{
-    margin-top: 100px;
-    min-height: 75vh;
+    margin: 100px 32px 0px 32px;
+    display: grid;
+    grid-template-rows: 5vh 70vh;
+    row-gap: 5px;
+    place-items: center;
+}
+
+.box-1{
+    width: 100%;
+    overflow: auto;
+}
+
+.box-1::-webkit-scrollbar{
+    display: none;
 }
 
 footer{
+    margin-top: 5px;
     background-color: rgb(238, 112, 133);
     color: rgb(24, 23, 23);
-    min-height: 10vh;
-    padding: 3px 0px 3px 5px;
-    justify-content: space-around;
-    align-items: center;
+    min-height: 8vh;
+    padding: 3px 0px 5px 5px;
     text-align: center;
 }
 
@@ -40,6 +56,22 @@ footer{
     display: none;
     font-size: 22px;
     padding: 23px;
+}
+
+#search-bar{
+    width: 70%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#filter-button{
+    font-size: 18px;
+    padding: 13px 16px 17px 16px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
 .logo{
@@ -59,7 +91,7 @@ i{
 ul {
     list-style-type: none;
     margin: 0 0px 0 118px;
-    padding: 25px;
+    padding: 23px;
 }
 
 
@@ -70,7 +102,7 @@ ul {
 }
 
 .full-nav > li a {
-    padding: 25px 25px;
+    padding: 23px 25px;
     text-decoration: none;
     transition: 0.3s ease-in;
 }
@@ -90,55 +122,113 @@ li a:hover {
     color: white;
     /*font-weight: bold;*/
     text-shadow: 0px 2px 10px whitesmoke;
-    padding: 23px 26px;
+    padding: 23px 25px;
 }
 
 #hide-toggle{
     display: none;
 }
 
-.box-1{
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 20%;
-    
-}
+
 
 .search-filter{
-    margin-left: 40%;
+    margin-left: 20%;
     margin-bottom: 20px;
+    width: 65%;
 }
+
+#wrapper{
+    position: fixed;
+    border-radius: 100%;
+    top: 79%;
+    left: 89.4%;
+    background-color: rgb(238, 112, 133);
+    padding: 34px;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0%{
+        opacity: 1;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.75);
+    }
+  }
 
 #add-item-button{
-    font-size: 18px;
-    padding: 18px 20px;
-    border-radius: 100px;
-    background-color: whitesmoke;
-    border: 4px solid rgb(238, 112, 133);
+    font-size: 16px;
+    padding: 18px;
+    border-radius: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(238, 112, 133);
+    border: 1px solid rgb(245, 209, 215);   
     transition: 0.4s ease-in-out;
     position: fixed;
-    top: 75%;
-    left: 85%;
+    top: 80%;
+    left: 90%;
+    display: inline-block;
+
 }
 
-#add-item-button:hover{
-    background-color: rgb(238, 112, 133);
-    border: 4px solid black;
-    color: whitesmoke;
-    font-weight: bold;
-    padding: 18px 17px;
+#add-item-button:hover .tooltiptext{
+    background-color: whitesmoke;
+    border: 1px solid rgb(238, 112, 133);
+    color: black;
+    padding: 18px;
+    box-shadow: 0 0px 4px darkslategray;
+    visibility: visible;
 }
+
+
+
+#add-item-button:active{
+    box-shadow: 0 0px 3px darkslategray;
+    padding: 18px;
+    color: white;
+    background-color: rgb(238, 112, 133);
+    border: 1px solid rgb(245, 209, 215);
+}
+
+.tooltiptext {
+    font-size: 0.8rem;
+    visibility: hidden;
+    width: 70px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0 !important;
+    transition: 0.1s ease-in;
+    /* Position the tooltip */
+    position: absolute;
+    top: 5px;
+    left: 55px;
+    z-index: 1;
+  }
+
+  #add-item-button .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgb(238, 112, 133) transparent transparent;
+  }
 
 /*Mobile*/
 @media screen and (max-width : 480px){
     body{
-        overflow-x: hidden;
-        overflow: hidden; /* Hide scrollbars */
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        font-size: 16px;
+        overflow: auto;
     }
 
-    body::-webkit-scrollbar {
+    body::-webkit-scrollbar{
         display: none;
     }
 
@@ -148,8 +238,15 @@ li a:hover {
         height: 10vh;
     }
 
+    main{
+        margin: 25% 16px 0px 16px ;
+        min-height: 80vh;
+        grid-template-rows: auto 1fr; /* Adjust the row layout for mobile */
+        row-gap: 0px;
+    }
+
     .logo{
-        width: 60%;
+        width: 70%;
     }
 
     ul {
@@ -159,11 +256,10 @@ li a:hover {
 
     .full-nav{
         position: absolute;
-        height: 31.5vh;
+        z-index: 20;
         top: 7vh;
         background-color: rgb(0, 0, 0);
         flex-direction: column;
-        align-items: center;
         width: 50%;
         right: -300px;
         transition: right 0.5s ease-in-out;
@@ -182,6 +278,7 @@ li a:hover {
 
     #mini-nav{
         display: block;
+        z-index: 10;
     }
 
     #hide-toggle:checked ~ * .full-nav {
@@ -189,37 +286,62 @@ li a:hover {
     }
 
     .box-1{
+        overflow-x:auto;
         justify-content: space-around;
         align-items: center;
-        margin-left: 5%;
-        overflow-x:auto;
-        height: 50vh;
+        height: 65vh;
     }
 
     #add-item-button{
-        left: 60%;
-        padding: 16px 14px;
+        top: 85%;
+        left: 80%;
+        padding: 18px;
     }
 
-    #add-item-button:hover{
-        font-weight: normal;
-        padding: 16px 14px;
+    #wrapper{
+        top: 84%;
+        left: 78%;
     }
+
+    #search-bar{
+        width: 83%;
+        height: 48px;
+        border-radius: 5px;
+    }
+
+    #search-bar:focus{
+        outline: 3px dashed black;
+    }
+
+    #filter-button{
+        padding: 17px 10px;
+        background-color: blue;
+        color: white;
+        border: 2px solid blue;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+    
+    #filter-button:hover {
+        background-color: white;
+        color: blue;
+    }
+
+    .search-filter{
+        margin-bottom: 0px;
+        margin-left: 0px;
+        width: 100%;
+    }
+
 }
 
 /*Tablet*/
 @media screen and (min-width: 481px) and (max-width: 768px){
-    body{
-        overflow-x: hidden;
-        overflow: hidden; /* Hide scrollbars */
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-
-    body::-webkit-scrollbar {
+    body::-webkit-scrollbar{
         display: none;
     }
-
+    
     header{
         position: fixed;
         top: 0;
@@ -231,17 +353,24 @@ li a:hover {
         padding: 0;
     }
 
+    #mini-nav{
+        width: 15%;
+        font-size: 32px;
+    }
+
+    #logo-box{
+        width: 60%;
+    }
+
     .logo{
         width: 50%;
     }
 
     .full-nav{
         position: absolute;
-        height: 31vh;
         top: 7vh;
         background-color: black;
         flex-direction: column;
-        align-items: center;
         width: 40%;
         right: -600px;
         transition: right 0.5s ease-in-out;
@@ -264,6 +393,39 @@ li a:hover {
 
     #hide-toggle:checked ~ * .full-nav {
         right: 0px;
+    }
+
+    main{
+        margin: 15% 16px 0px 16px ;
+        min-height: 80vh;
+        grid-template-rows: auto 1fr; /* Adjust the row layout for mobile */
+        row-gap: 0px;
+    }
+
+    .box-1{
+        margin-left: 0px;
+    }
+
+    table{
+        height: 70vh !important;
+    }
+
+    #add-item-button{
+        top: 85%;
+        left: 88%;
+    }
+
+    #wrapper{
+        top: 84.4%;
+        left: 86.9%;
+    }
+
+    #filter-button{
+        padding: 12px 16px 17px 16px;
+    }
+
+    #search-bar{
+        width: 68%;
     }
 
 }
@@ -320,3 +482,4 @@ li a:hover {
         color: black;
     }
 }
+

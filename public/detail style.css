@@ -1,0 +1,132 @@
+:root{
+    --box-shadow: darkslategray;
+    --text: black;
+    --accent: rgb(245, 209, 215);
+    --primary: white;
+    --secondary: rgb(238, 112, 133);
+    --background: whitesmoke;
+}
+
+main{
+    display: grid;
+    row-gap: 20px;
+    place-items: center;
+    font-size: 16px;
+    margin: 8% 0px 0px 0px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.photo-card, .detail-card, .options{
+    background-color: var(--primary);
+    padding: 0px 10px;
+}
+
+.detail-card{
+    padding-top: 25px;
+}
+
+.item-type, .serial-number{
+    color: rgb(117, 109, 109);
+    margin-bottom: 0px;
+}
+
+.brand-model{
+    font-size: 24px;
+    margin-top: 0px;
+}
+
+.location{
+    color: rgb(117, 109, 109);
+    margin-top: 0px;
+}
+
+.item-pic{
+    width: 100%;
+    height: 300px;
+}
+
+#opt-icon i{
+    color: var(--text);
+}
+
+/*Navbar*/
+.options{
+    padding-right: 0;
+}
+.options ul {
+    list-style-type: none;
+    padding: 0 23px 23px 23px;
+}
+
+#opt-icon a {
+    display: block;
+    padding: 35px 16px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+#opt-icon a:hover {
+    background-color: skyblue;
+    color: white;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.success-message{
+    position: absolute;
+    top: 75vh;
+    right: -50px;
+    display: none;
+    padding: 30px 35px;
+    background-color: var(--background);
+    border: 3px solid var(--accent); 
+    color: var(--text);
+    box-shadow: 0px 0px 4px var(--box-shadow);
+}
+
+/*Mobile*/
+@media screen and (max-width : 480px){
+    main {
+        margin-left: 16px;
+        grid-template-rows: auto 1fr; /* Adjust the row layout for mobile */
+        row-gap: 0px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr; /* Change to a single column for mobile */
+    }
+    
+    .photo-card,
+    .detail-card,
+    .options {
+        padding: 10px; 
+        border-bottom: 3px solid var(--accent);
+    }
+    .options {
+        padding-right: 16px; 
+    }
+
+    .options ul {
+        display: flex;
+        padding: 0px 0px 0px 0px;
+    }
+
+    #opt-icon i{
+        margin-left: 26.5%;
+        font-size: 24px; 
+    }
+
+    #opt-icon a {
+        border: 3px solid var(--accent);
+        font-size: 16px; 
+        padding: 28px 16px;
+        text-align: center;
+    }
+}

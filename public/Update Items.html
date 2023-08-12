@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelcia Jamaica Inventory Management System</title>
+    <title>Intelcia Jamaica IMS - Update Item</title>
     <!-- Include your CSS stylesheets and JavaScript files here -->
     <link rel="stylesheet" href="style-IMS.css">
     <!--For FontAwesome-->
@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="style-add.css">
     <!--Jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="add-item.js"></script>
+    <script src="table.js"></script>
+    <script src="update-items.js"></script>
 </head>
 <body>
     <header>
@@ -38,8 +39,14 @@
     </header>
     <main>
         
-        <form id="inventoryForm" class="container">
-            <h1>Add an Item</h1>
+        <form id="inventoryForm" class="container" >
+            <h1 id="update-heading">Update: </h1>
+
+            <section class="form-group">
+                <label for="serial" hidden>Serial Number: </label>
+                <input type="hidden" id="serial" name="serial" required><br><br>
+            </section>
+            
             <section class="form-group">
                 <label for="itemType">Item Type:</label>
                 <select id="itemType" name="itemType" required>
@@ -64,11 +71,6 @@
             </section>
             
             <section class="form-group">
-                <label for="serial" id="title-serial">Serial Number:</label>
-                <input type="text" id="serial" name="serial" required><br><br>
-            </section>
-            
-            <section class="form-group">
                 <label for="location">Location:</label>
                 <select id="location" name="location" required>
                     <option value="">Select Location</option>
@@ -83,9 +85,7 @@
 
             <input type="submit" value="Submit" id="submit">
          </form>
-         <div class="success-message" >
-            Item deleted successfully!
-        </div>
+        
     </main>
     <footer>
         <!-- Your footer content goes here -->

@@ -3,7 +3,6 @@ $(document).ready(function() {
     .then(response => response.json())
     .then(data => {
       // Use the 'data' received from the backend
-      //console.log(data);
 
       // Select the table body
       const tableBody = $('#inventory-table tbody');
@@ -16,7 +15,16 @@ $(document).ready(function() {
         const itemTypeCell = $('<td>').text(row['Item Type']);
         const brandCell = $('<td>').text(row.Brand);
         const modelCell = $('<td>').text(row.Model);
-        const serialNumberCell = $('<td>').text(row['Serial Number']);
+
+        // Create a hyperlink for the serial number cell
+        const serialNumberLink = $('<a>')
+          .attr('href', `/detail.html?serial=${row['Serial Number']}`) // Replace '/update/' with your actual update page URL
+          .text(row['Serial Number'])
+          .addClass('serial-number'); // Add the 'serial-number' class to the hyperlink
+
+        // Append the hyperlink to the serial number cell
+        const serialNumberCell = $('<td>').append(serialNumberLink);
+
         const locationCell = $('<td>').text(row.Location);
 
         // Append the cells to the table row

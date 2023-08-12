@@ -1,9 +1,12 @@
 table{
     border: 1px solid;
     border-collapse: collapse;
-    width: 78%;
+    width: 100%;
     overflow-x: auto;
+    overflow-y: auto;
     height: 150px;
+    scroll-behavior: smooth;
+    
 }
 
 th, td {
@@ -16,6 +19,11 @@ th, td {
     height: 30px;
     background-color: rgb(238, 112, 133);
     color: white;
+    position: sticky;
+    top: 0; /* Stick the header to the top of the container */
+    z-index: 1; /* Ensure the header stays above the table content */
+    transition: opacity 0.3s ease; /* Add transition for fading effect */
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+
