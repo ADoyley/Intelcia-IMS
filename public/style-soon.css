@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
+
+:root{
+    --box-shadow: darkslategray;
+    --text: black;
+    --accent: rgb(245, 209, 215);
+    --primary: white;
+    --secondary: rgb(238, 112, 133);
+    --background: whitesmoke;
+}
+
+main{
+    display: block !important;
+    margin: 5.3% 0 0 0;
+    padding: 0;
+    height: 80vh;
+    font-size: 24px;
+    font-family: 'Roboto', 'sans-serif';
+    color: var(--box-shadow);
+}
+
+img{
+    width: 100%;
+    height: inherit;
+    object-fit: fill;
+}
+
+.glass-effect{
+    background: linear-gradient(135deg, rgba(255, 255, 225, 0.1), rgba(255, 255, 225, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px var(--box-shadow);
+    border-radius: 1px solid var(--box-shadow);
+    border-radius: 32px;
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    padding: 35px 25px ;
+    width: 370px;
+}
+
+.highlight{
+    font-weight: bold;
+    color: black;
+}

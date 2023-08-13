@@ -18,7 +18,7 @@ $(document).ready(function() {
 
         // Create a hyperlink for the serial number cell
         const serialNumberLink = $('<a>')
-          .attr('href', `/detail.html?serial=${row['Serial Number']}`) // Replace '/update/' with your actual update page URL
+          .attr('href', `/detail.html?serial=${row['Serial Number']}`)
           .text(row['Serial Number'])
           .addClass('serial-number'); // Add the 'serial-number' class to the hyperlink
 
@@ -32,6 +32,21 @@ $(document).ready(function() {
 
         // Append the table row to the table body
         tableBody.append(tableRow);
+      });
+
+      // Search functionality
+      $('#search-bar').on('input', function() {
+        const searchValue = $(this).val().toLowerCase();
+
+        // Loop through each row and hide/show based on search value
+        tableBody.find('tr').each(function() {
+          const rowText = $(this).text().toLowerCase();
+          if (rowText.includes(searchValue)) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
       });
     })
     .catch(error => {

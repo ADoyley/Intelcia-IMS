@@ -6,13 +6,14 @@
     <title>Intelcia Jamaica Inventory Management System</title>
     <!-- Include your CSS stylesheets and JavaScript files here -->
     <link rel="stylesheet" href="style-IMS.css">
+    <link rel="stylesheet" href="animate.css">
     <!--For FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style-table.css">
     <link rel="stylesheet" href="detail style.css">
     <!--Jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="detail.js"></script>
+    <script src="table2.js"></script>
     
 
 </head>
@@ -30,7 +31,7 @@
         <nav>
             <ul class="full-nav">
                 <li><a href="Index.html"><span id="full-word">Home</span></a></li>
-                <li><a href="#"><span id="full-word">Reports</span></a></li>
+                <li><a href="coming soon.html"><span id="full-word">Reports</span></a></li>
                 <li><a href="#"><span id="full-word">Settings</span></a></li>
             </ul>
         </nav>
@@ -42,7 +43,9 @@
         <div class="search-filter">
             <input type="text" id="search-bar" placeholder="Search items...">
             <i class="fas fa-filter" id="filter-button"></i>
+            <div id="search-dropdown" class="search-dropdown"></div>
         </div>
+        
         <section class="grid-container">
             <article class="photo-card">
                 <img src="" alt="Item Pic" class="item-pic">
@@ -73,9 +76,13 @@
                 <button id="cancelBtn">Cancel</button>
             </div>
         </dialog>
-        <div class="success-message" >
-            Item deleted successfully!
-        </div>
+        <figure class="success-message">
+            <div class="success-message-body">
+                <i class="far fa-check-circle" id="sm-icon"></i>
+                Item deleted successfully!
+            </div>
+            <div class="success-message-progress"></div>
+         </figure>
     </main>
     <footer>
         <!-- Your footer content goes here -->

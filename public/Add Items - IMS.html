@@ -6,6 +6,7 @@
     <title>Intelcia Jamaica Inventory Management System</title>
     <!-- Include your CSS stylesheets and JavaScript files here -->
     <link rel="stylesheet" href="style-IMS.css">
+    <link rel="stylesheet" href="animate.css">
     <!--For FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style-table.css">
@@ -28,7 +29,7 @@
         <nav>
             <ul class="full-nav">
                 <li><a href="Index.html"><span id="full-word">Home</span></a></li>
-                <li><a href="#"><span id="full-word">Reports</span></a></li>
+                <li><a href="coming soon.html"><span id="full-word">Reports</span></a></li>
                 <li><a href="#"><span id="full-word">Settings</span></a></li>
             </ul>
         </nav>
@@ -83,9 +84,13 @@
 
             <input type="submit" value="Submit" id="submit">
          </form>
-         <div class="success-message" >
-            Item deleted successfully!
-        </div>
+         <figure class="success-message">
+            <div class="success-message-body">
+                <i class="far fa-check-circle" id="sm-icon"></i>
+                Item added successfully!
+            </div>
+            <div class="success-message-progress"></div>
+         </figure>
     </main>
     <footer>
         <!-- Your footer content goes here -->

@@ -13,17 +13,8 @@ h1{
     padding-bottom: 15px;
 }
 
-.success-message{
-    position: absolute;
-    top: 75vh;
-    right: -50px;
-    display: none;
-    padding: 30px 35px;
-    background-color: var(--background);
-    border: 3px solid var(--accent); 
-    color: var(--text);
-    box-shadow: 0px 0px 4px var(--box-shadow);
-}
+
+
 main{
     display: grid !important;
     grid-template-rows: auto 1fr; /* Adjust the row layout for mobile */
@@ -62,6 +53,7 @@ section{
     padding: 5px;
     left: -10px;
     transition: 0.3s ease-in-out;
+    width: 70%;
 }
 
 .form-group input {
@@ -99,7 +91,7 @@ section{
     }
 
     .form-group label{
-        left: 36%;
+        left: 11%;
     }
 
     .form-group input{
@@ -109,7 +101,7 @@ section{
     }
 
     .form-group select{
-        margin-left: 27%;
+        margin-left: 12%;
         
     }
 
@@ -118,7 +110,7 @@ section{
     }
 
     #title-model, #title-serial{
-        left: 30%;
+        left: 10%;
     }
 
     #submit{
@@ -136,7 +128,7 @@ section{
         padding: 40px 20px 5px 20px;
     }
     .form-group label{
-        left: 42%;
+        left: 31%;
     }
 
     .form-group input{
@@ -153,7 +145,7 @@ section{
     }
 
     #title-model, #title-serial{
-        left: 40%;
+        left: 30.8%;
     }
     
     #submit{
@@ -173,7 +165,7 @@ section{
         height: 45vh;
     }
     .form-group label{
-        left: 40%;
+        left: 15%;
     }
 
     .form-group input{
@@ -182,19 +174,15 @@ section{
     }
 
     .form-group select{
-        margin-left: 35%;
+        margin-left: 15%;
     }
 
     #title-brand{
         padding-left: 20px;
     }
 
-    #title-model{
-        left: 36%;
-    }
-
-    #title-serial{
-        left: 36%;
+    #title-model, #title-serial{
+        left: 15%;
     }
 
     #submit{
@@ -217,7 +205,7 @@ section{
     }
 
     .form-group label{
-        left: 38%;
+        left: 10%;
     }
 
     .form-group input{
@@ -226,7 +214,7 @@ section{
     }
 
     .form-group select{
-        margin-left: 30%;
+        margin-left: 11%;
     }
 
     #title-brand{
@@ -234,7 +222,7 @@ section{
     }
 
     #title-model, #title-serial{
-        left: 33%;
+        left: 10%;
     }
 
     #submit{
