@@ -122,6 +122,40 @@
     opacity: 1;
     transition: opacity 0.3s ease-in-out; /* Keep the transition here as well */
   }
-  
+
+.photo-card, .detail-card, .options, .fadeIn {
+    position: relative;
+    transform: translateY(30px);
+    animation: fadeInAnimation ease-in 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.photo-card, .fadeInDelay{
+    animation-delay: 0.2s;
+}
+
+.detail-card{
+    animation-delay: 0.4s;
+}
+
+.options{
+    animation-delay: 0.6s;
+}
+
+
+@keyframes fadeInAnimation {
+    0% {
+        top: 30px;
+        opacity: 0;
+        transform: translateY(0);  
+    }
+    100% {
+        top: 0px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
   

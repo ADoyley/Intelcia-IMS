@@ -12,8 +12,15 @@
     <link rel="stylesheet" href="style-table.css">
     <link rel="stylesheet" href="style-add.css">
     <!--Jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="add-item.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+
+
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="add-item.js"></script>
+    <!--For camera-->
+    
+    <script src="barcode.js"></script>
 </head>
 <body>
     <header>
@@ -43,7 +50,7 @@
             <h1>Add an Item</h1>
             <section class="form-group">
                 <label for="itemType">Item Type:</label>
-                <select id="itemType" name="itemType" required>
+                <select id="itemType" name="itemType" >
                     <option value="">Select Item Type</option>
                     <option value="CPU">CPU</option>
                     <option value="Keyboard">Keyboard</option>
@@ -56,22 +63,25 @@
 
             <section class="form-group">
                 <label for="brand" id="title-brand">Brand:</label>
-                <input type="text" id="brand" name="brand" required><br><br>
+                <input type="text" id="brand" name="brand" ><br><br>
             </section>
             
             <section class="form-group">
                 <label for="model" id="title-model">Model Number:</label>
-                <input type="text" id="model" name="model" required><br><br>
+                <input type="text" id="model" name="model" ><br><br>
             </section>
             
             <section class="form-group">
                 <label for="serial" id="title-serial">Serial Number:</label>
-                <input type="text" id="serial" name="serial" required><br><br>
+                <input type="text" id="serial" name="serial" >
+                <video id="camera-stream"></video>
+                <button id="startScanButton"><i class="fas fa-camera"></i></button><br><br>
             </section>
+            
             
             <section class="form-group">
                 <label for="location">Location:</label>
-                <select id="location" name="location" required>
+                <select id="location" name="location" >
                     <option value="">Select Location</option>
                     <option value="Zone 1">Zone 1</option>
                     <option value="Zone 2">Zone 2</option>

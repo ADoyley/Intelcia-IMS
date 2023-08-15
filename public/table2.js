@@ -9,24 +9,24 @@ $(document).ready(function() {
           const tableRow = $('<tr>').addClass('fade-in-row'); // Add fade-in class here
   
           // ... Create and append cells ...
-            // Create table cells with the corresponding data
-        const itemTypeCell = $('<td>').text(row['Item Type']);
-        const brandCell = $('<td>').text(row.Brand);
-        const modelCell = $('<td>').text(row.Model);
+          // Create table cells with the corresponding data
+          const itemTypeCell = $('<td>').text(row['Item Type']);
+          const brandCell = $('<td>').text(row.Brand);
+          const modelCell = $('<td>').text(row.Model);
 
-        // Create a hyperlink for the serial number cell
-        const serialNumberLink = $('<a>')
-          .attr('href', `/detail.html?serial=${row['Serial Number']}`)
-          .text(row['Serial Number'])
-          .addClass('serial-number'); // Add the 'serial-number' class to the hyperlink
+          // Create a hyperlink for the serial number cell
+          const serialNumberLink = $('<a>')
+            .attr('href', `/detail.html?serial=${row['Serial Number']}`)
+            .text(row['Serial Number'])
+            .addClass('serial-number'); // Add the 'serial-number' class to the hyperlink
 
-        // Append the hyperlink to the serial number cell
-        const serialNumberCell = $('<td>').append(serialNumberLink);
+          // Append the hyperlink to the serial number cell
+          const serialNumberCell = $('<td>').append(serialNumberLink);
 
-        const locationCell = $('<td>').text(row.Location);
+          const locationCell = $('<td>').text(row.Location);
 
-        // Append the cells to the table row
-        tableRow.append(itemTypeCell, brandCell, modelCell, serialNumberCell, locationCell);
+          // Append the cells to the table row
+          tableRow.append(itemTypeCell, brandCell, modelCell, serialNumberCell, locationCell);
 
           tableBody.append(tableRow);
         });
@@ -44,7 +44,7 @@ $(document).ready(function() {
           searchDropdown.empty();
           filteredResults.forEach(result => {
             const searchOption = $('<div>')
-              .addClass('search-option')
+              .addClass('search-option').addClass('fadeIn')
               .html(
                 `<strong>${result['Serial Number']}</strong> - ${result['Item Type']} - Brand: ${result.Brand} - Location: ${result.Location}`
               )

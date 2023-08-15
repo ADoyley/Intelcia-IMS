@@ -6,7 +6,8 @@
     <title>Intelcia Jamaica Inventory Management System</title>
     <!-- Include your CSS stylesheets and JavaScript files here -->
     <link rel="stylesheet" href="style-IMS.css">
-    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style-soon.css">
+    <link rel="stylesheet" href="grid-layout.css">
     <!--For FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style-table.css">
@@ -37,31 +38,15 @@
         </label>
     </header>
     <main>
-        <div class="search-filter">
-            <input type="text" id="search-bar" placeholder="Search items...">
-            <i class="fas fa-filter" id="filter-button"></i>
-        </div>
-        <section class="box-1">
-            <table class="fadeIn" id="inventory-table">
-                <thead>
-                    <tr>
-                        <th id="table-head">Item Type</th>
-                        <th id="table-head">Brand</th>
-                        <th id="table-head">Model</th>
-                        <th id="table-head">Serial Number</th>
-                        <th id="table-head">Location</th>
-                    </tr>
-                </thead>
-                <tbody id="inventory-table tbody">
-                    <!-- Table body rows will be dynamically generated -->
-                </tbody>
-            </table>
+        <section class="grid-container">
+            <aside class="item5" id="summary-mid">
+                Side Bar
+            </aside>
+            <article class="item1" id="summary-sm">Summary #1</article>
+            <article class="item2" id="summary-sm">Summary #2</article>
+            <article class="item3" id="summary-sm">Summary #3</article>
+            <article class="item4" id="summary-lg">List</article>
         </section>
-        
-        <span id="wrapper"></span>
-        <i class="fas fa-plus" id="add-item-button" onclick="window.location.href='Add Items - IMS.html';">
-            <span class="tooltiptext">Add an item</span>
-        </i>
     </main>
     <footer>
         <!-- Your footer content goes here -->
